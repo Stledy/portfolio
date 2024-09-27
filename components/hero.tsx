@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from 'next/image';
 import LampDemo from './ui/lamp';
 
 const Hero = () => {
@@ -28,11 +29,13 @@ const Hero = () => {
     const Brand = () => (
         <div className="flex items-center justify-between py-5 md:block">
             <a href="/">
-                <img
+                {/* Replacing <img> with <Image> */}
+                <Image
                     src="/logo1.png" // Replace with your logo URL
                     width={120}
                     height={50}
                     alt="Your Name logo"
+                    priority={true} // Optimize for loading
                 />
             </a>
             <div className="md:hidden">

@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import Image from "next/image"; // Importing Next.js Image component
 
 export default function LampDemo() {
   return (
@@ -16,7 +17,7 @@ export default function LampDemo() {
         }}
         className="mt-8 bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-3xl md:text-5xl lg:text-7xl font-small tracking-tight text-transparent"
       >
-        Hello! <br /> I'm Tlelima .J. Hlalele
+        Hello! <br /> I&apos;m Tlelima .J. Hlalele {/* Escaped apostrophe */}
       </motion.h1>
       <motion.p
         initial={{ opacity: 0.5, y: 100 }}
@@ -29,7 +30,7 @@ export default function LampDemo() {
         className="mt-4 text-center text-gray-400 text-[16px] md:text-[20px] leading-relaxed px-4"
       >
         A passionate software developer<br /> with a love for modern technology,<br />
-        crafting digital solutions from the heart of Lesotho.<br /> Let's build the future together.
+        crafting digital solutions from the heart of Lesotho.<br /> Let&apos;s build the future together. {/* Escaped apostrophe */}
       </motion.p>
     </LampContainer>
   );
@@ -111,10 +112,13 @@ export const LampContainer = ({
 
       {/* Image on the right side */}
       <div className="absolute right-0 mr-0 transform -translate-y-[189px]">
-        <img
+        {/* Replaced <img> with <Image> */}
+        <Image
           src="/pic.jpg" // Replace with your image path
           alt="Your Description"
           className="h-auto max-w-full object-cover rounded-lg shadow-lg"
+          width={400}
+          height={300} // Adjust size as necessary
         />
       </div>
 
